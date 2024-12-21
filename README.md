@@ -3,9 +3,9 @@ This library INI was created initially as a way to have an in-game toggle for NS
 > [!IMPORTANT]
 > Depends on files from XXMI Core for printing notifications at the moment. Editing to support users of model importers independent of XXMI may come at a later time.
 ### Master INI System
-With a Character Master INI, you gain the ability to swap between active mods without having to disable folders to ensure that only one mod for a character is active at a time. This also eliminates the need for out simple external mod-managers; however I should note there are a number of these tools that provide valuable additional functionality which you may consider still worth using in other capacities.
+With a Character Master INI, you gain the ability to swap between active mods without having to disable folders to ensure that only one mod for a character is active at a time. This also eliminates the need for using simple external mod-managers; however I should note there are a number of these tools that provide valuable additional functionality which you may consider still worth using in other capacities.
 
-The Master INI would need to implement something like this with the following assumptions:
+The Master INI would need to implement something like the example implementation below with the following assumptions:
 * there are 6 mods for the character and we use -1 for "no mod"
 * the sfw mods are everything except the 2nd and 5th (swapvar values 1 and 4)
 * the 5th mod is a toggle mod with sfw variant(s)
@@ -117,9 +117,9 @@ endif
 
 Obviously the actual toggle keys you want to use can be changed, but I've found these to be good and not used much by existing mods.
 
-By setting things up like this, you are now able to maintain your last used SFW and NSFW mod even if that happens to be the same mod, and freely toggle between the two or to be able to toggle all NSFW off or just Female NSFW off and have this character instantly swap to its last SFW mod (or load in with it if you switch to that character later).
+By setting things up like this, you are now able to maintain your last used SFW and NSFW mod even if that happens to be the same mod, and freely toggle between the two or to be able to toggle all NSFW off or just a single category of NSFW off and have this character instantly swap to its last SFW mod (or load in with it if you switch to that character later).
 ### For individual mods
-Authors of mods and users willing to edit INI files could make use of this library by offering a SFW reset and the ability to save the values of individual part variables if the toggle mod is Outfit Compiled properly for quick restoration of the user's loadout before the reset. Old-style merge mods which use a single `swapvar` variable can also take the above `lastsfw`/`lastnsfw` approach but without the hotkeys as those are more for that Character management system.
+Authors of mods and users willing to edit INI files could make use of this library by offering a SFW reset and the ability to save the values of individual part variables if the toggle mod is Outfit Compiled properly for quick restoration of the user's loadout before the reset. Old-style merge mods which use a single `swapvar` variable can also take the above `lastsfw`/`lastnsfw` approach but without the hotkeys as those are more for the above Character management system using a Character Master INI.
 
 The latter case of old-style merge mods is much easier to implement as you copy the same code from the `[Present]` block seen above and ensure the variables are declared in the `[Constants]` section.
 
