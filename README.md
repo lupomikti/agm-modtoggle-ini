@@ -1,5 +1,7 @@
 # NSFW Toggle INI Library
 This library INI was created initially as a way to have an in-game toggle for NSFW mods without needing to rename the folders themselves. It is used in conjunction with the idea of having a Master INI file for each character (rather each character skin to be more precise) but does not have to be. What follows is an explanation of how to utilize this library both for the Master INI system and for individual mods.
+> [!IMPORTANT]
+> Depends on files from XXMI Core for printing notifications at the moment. Editing to support users of model importers independent of XXMI may come at a later time.
 ### Master INI System
 With a Character Master INI, you gain the ability to swap between active mods without having to disable folders to ensure that only one mod for a character is active at a time. This also eliminates the need for out simple external mod-managers; however I should note there are a number of these tools that provide valuable additional functionality which you may consider still worth using in other capacities.
 
@@ -132,6 +134,7 @@ At the moment, the following categories are implemented in the INI and available
 
 There is also the catch-all `$nsfw` which should not generally be used as there is internal logic keeping this value in sync with the categories but it can be if you *don't* use any of the categories, and the meta-group `$lolishonsfw` which similarly should not be used.
 
+> [!NOTE]
 > Yes, yes, I know what you're likely thinking. My stance is that as a tool it holds no opinions and should not be made opinionated in what types of mods it supports or doesn't support. The fact is simply there are users of these kinds of mods and they could easily be users of this tool too.
 
 There are currently no plans to add more categories although I have thought about trying to include one for so-called "Hard NSFW"; the very simple reason I haven't yet being that I am *out* of hotkeys. Seriously, look in the file... I have exhausted the reasonable options and even those alone took me, and I am not exaggerating, a collective 3 hours of thought to finalize. I'd rather not waste more time on that.
